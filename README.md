@@ -1,1 +1,3 @@
-## **BTL-OOP-nh-m-6-E20-PTIT**
+## **Major Exercise Object Oriented Programming - Group 6 E20 PTIT**
+
+## Overview
