@@ -1,4 +1,5 @@
-import Control.Application;
+import model.Application;
+import test.Test;
 
 public class main {
 
