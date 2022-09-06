@@ -29,7 +29,7 @@ public class MyMouseListener implements MouseListener{
 			int xPressedMouse = MouseInfo.getPointerInfo().getLocation().x - myScreen.getContentPane().getLocationOnScreen().x;
 			int yPressedMouse = MouseInfo.getPointerInfo().getLocation().y - myScreen.getContentPane().getLocationOnScreen().y;
 			
-			myScreen.setPositionMouse(xPressedMouse, yPressedMouse);
+			myScreen.setMousePosition(xPressedMouse, yPressedMouse);
 			myScreen.setIsPressedMouse(MouseState.LEFTPRESSED);
 			//2. set position to gameControl
 			//debug
@@ -40,19 +40,19 @@ public class MyMouseListener implements MouseListener{
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		myScreen.setPositionMouse(-1, -1);
+		myScreen.setMousePosition(-1, -1);
 		myScreen.setIsPressedMouse(MouseState.RELEASED);
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-		myScreen.setIsPressedMouse(MouseState.RELEASED);
+//		myScreen.setIsPressedMouse(MouseState.RELEASED);
 
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
-		myScreen.setIsPressedMouse(MouseState.RELEASED);
+//		myScreen.setIsPressedMouse(MouseState.RELEASED);
 
 	}
 

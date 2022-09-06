@@ -1,35 +1,50 @@
 package frame;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.image.BufferedImage;
+import javax.swing.JFrame;
 
-import javax.swing.*;
+import input.MouseState;
 
-public class Screen extends JPanel implements ScreenImp{
+public class Screen extends JFrame implements ScreenImp{
 	
-	int screenWidth;
-	int screenHeight;
+	protected int xMouse;
+	protected int yMouse;
 	
-	private Frame frame;
+	protected MouseState mouseState;
 	
-	BufferedImage image;
-	
-	public Screen(Frame frame) {
-		this.frame = frame;
-		this.myScreen();
+	public Screen() {
 		this.init();
 	}
 
 	@Override
-	public void myScreen() {
-		this.screenWidth = 500;		
-		this.screenHeight = 500;
-	}
-	
-	@Override
 	public void init() {
-		this.setPreferredSize(new Dimension(screenWidth, screenHeight));
-		this.setBackground(new Color(255,0,0));
+		this.xMouse = -1;
+		this.yMouse = -1;
+		this.mouseState = MouseState.RELEASED;
+	}
+
+	@Override
+	public int getXMouse() {
+		return xMouse;
+	}
+
+	@Override
+	public int getYMouse() {
+		return yMouse;
+	}
+
+	@Override
+	public void setMousePosition(int x, int y) {
+		this.xMouse = x;
+		this.yMouse = y;
+	}
+
+	@Override
+	public void setIsPressedMouse(MouseState pressed) {
+		this.mouseState = pressed;
+	}
+
+	@Override
+	public MouseState getMouseState() {
+		return mouseState;
 	}
 }

@@ -1,28 +1,23 @@
 package test;
 
-import java.awt.Dimension;
-
 import javax.swing.*;
 
-import frame.Frame;
+import frame.Activity;
 import frame.Screen;
 import input.MouseState;
 import input.MyMouseListener;
 
-public class Test extends Frame{
-	int xMouse;
-	int yMouse;
-	
-	MouseState myMouseState = MouseState.RELEASED;
+public class Test extends Screen{
+
 	MyMouseListener myMouseListener;
 	
-	Screen panel;
+	Activity panel;
 	
 	public Test() {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);
 		
-		panel = new Screen(this);
+		panel = new Activity(this);
 		panel.init();
 		
 		myMouseListener = new MyMouseListener(this);
@@ -35,33 +30,18 @@ public class Test extends Frame{
 		
 	}
 	
-	void initGame() {
-		xMouse = -1;
-		yMouse = -1;
-	}
-	
-	public void setPositionMouse(int x, int y) {
-		this.xMouse = x;
-		this.yMouse = y;
-	}
-	
-	public void setIsPressedMouse(MouseState pressed) {
-		this.myMouseState = pressed;
-	}
-	
 	public void run() {
 		while(true) {
-			if(myMouseState != MouseState.LEFTPRESSED) {
-				System.out.println(myMouseState + " " + xMouse + " " + yMouse);
+			if(mouseState == MouseState.LEFTPRESSED) {
+				System.out.println(mouseState + " " + xMouse + " " + yMouse);
+			}else {
+				System.out.println('0');
 			}
-			else
-				break;
 		}
 	}
 	
 	public static void main(String args[]) {
 		Test test = new Test();
-		test.initGame();
 		test.run();
 	}
 }
