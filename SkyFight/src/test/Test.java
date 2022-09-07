@@ -34,6 +34,8 @@ public class Test extends Screen{
 		while(true) {
 			if(mouseState == MouseState.LEFTPRESSED) {
 				System.out.println(mouseState + " " + xMouse + " " + yMouse);
+				System.out.println(this.panel.getScreen());
+				break;
 			}else {
 				System.out.println('0');
 			}
