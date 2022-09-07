@@ -2,19 +2,11 @@ package frame;
 
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.image.BufferedImage;
 
-import javax.swing.*;
+public class Activity extends ActivityAbs implements ActivityImp{
+	
+	private static final long serialVersionUID = 1L;
 
-public class Activity extends JPanel implements ActivityImp{
-	
-	int screenWidth;
-	int screenHeight;
-	
-	private Screen screen;
-	
-	BufferedImage image;
-	
 	public Activity(Screen screen) {
 		this.screen = screen;
 		this.myActivity();
@@ -37,10 +29,5 @@ public class Activity extends JPanel implements ActivityImp{
 	public void update() {
 		// TODO Auto-generated method stub
 		
-	}
-
-	@Override
-	public Screen getScreen() {
-		return this.screen;
 	}
 }

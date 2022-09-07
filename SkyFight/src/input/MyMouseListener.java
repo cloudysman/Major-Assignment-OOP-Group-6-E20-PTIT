@@ -4,8 +4,6 @@ import java.awt.MouseInfo;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-import javax.swing.*;
-
 import test.Test;
 
 public class MyMouseListener implements MouseListener{
